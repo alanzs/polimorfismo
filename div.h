@@ -1,22 +1,13 @@
+// div.h
+#pragma once
+#include "operacion.h"
+using namespace std;
 
-/*
- * Copyright (C) 2025 Tec de Monterrey
- *
- * You should have received a copy of the GNU Lesser General Public License
- * along with this program; if not, write to the Free Software Foundation,
- * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- */
-
-#include <math.h>
-#include <stdexcept>
-
-/**
-  metodo para realizar divisiones de dos numeros
- */
-double divide(int x, int y)
-{
-    if (y != 0)
+class Division : public Operacion {
+public:
+    double calcular(int x, int y) const override {
+        if (y == 0) 
+          throw runtime_error("Dividiste por 0 amigo....mal muy muy mal");
         return x / y;
-    else
-        return 0;
-}
+    }
+};
