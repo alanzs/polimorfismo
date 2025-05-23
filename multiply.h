@@ -1,10 +1,10 @@
-#include <math.h>
-#include <stdexcept>
+// multiply.h
+#pragma once
+#include "operacion.h"
 
-/**
-  metodo para realizar multiplicacion de dos numeros
- */
-double multiply(int x, int y)
-{
-    return x * y;
-}
+class Multiplicacion : public Operacion {
+public:
+    double calcular(int x, int y) const override {
+        return x * y;
+    }
+};
